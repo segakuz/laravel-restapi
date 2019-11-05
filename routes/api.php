@@ -18,9 +18,9 @@ use App\Http\Controllers\Api\AuthController;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-// Route::apiResource('/games', 'GameController');
+Route::apiResource('/games', 'GameController');
 Route::middleware('auth:api')->group(function(){
-    Route::apiResource('/games', 'GameController');
+    // Route::apiResource('/games', 'GameController');
     Route::get('/register', 'Api\AuthController@register')->name('register');
     Route::get('/login', 'Api\AuthController@login')->name('login');
     Route::get('/logout', 'Api\AuthController@logout')->name('logout');
